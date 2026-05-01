@@ -8,7 +8,7 @@ let connection=mysql.createConnection({
     password:"abc@123"
 })
 
-let getrandomeUser=()=>{
+let getrandomUser=()=>{
     return[
         faker.string.uuid(),
         faker.internet.username(),
@@ -21,8 +21,15 @@ let q="INSERT INTO user(id,name,email,password)values ?";
 
 let data=[];
 
-for(let i=)
+for(let i=1;i<=100;i++){
+    data.push(getrandomUser());
+}
 
 try{
-    connection.query()
+    connection.query(q,[data],(err,result)=>{
+        if(err) throw err;
+        console.log(result);
+    })
+}catch(err){
+    console.log(err);
 }
