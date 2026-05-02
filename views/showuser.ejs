@@ -18,13 +18,16 @@
             <th>User Email-ID</th>
         </tr>
         
-            <%for(users of user){%>
-        <tr>
+        <%for(users of user){%>
+            <tr>
             <td><%=users.id%></td>
             <td><%=users.name%></td>
             <td><%=users.email%></td>
+            <td><form action="/user/<%=user.id%>/edit" method="GET">
+                <button>Edit user</button>
+            </form></td>
+        </tr>
            <% }%>
-       </tr>
     </table>
 </body>
 </html>
