@@ -35,6 +35,19 @@ app.get("/",(req,res)=>{
     }
 })
 
+app.get("/user",(req,res)=>{
+    let q=`select * from user`;
+    try{
+        connection.query(q,(err,user)=>{
+            if(err)throw err;
+            res.render("showuser.ejs",{user})
+        })
+    }catch(er)
+    {
+        console.log(er);
+    }
+})
+
 // let  getRandomeUser=()=>{
 //     return[
 //         faker.string.uuid(),
