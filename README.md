@@ -1,109 +1,171 @@
-# 🚀 MySQL + Node.js Bulk Data Insertion Project
+# 🚀 User Management System (Node.js + Express + MySQL)
 
-## 📌 Overview
-
-This project demonstrates how to connect **Node.js** with **MySQL** and insert multiple records using fake data.
-
-It uses the **faker.js** library to generate random user data and performs **bulk insertion** into a MySQL database.
+A full-stack **User Management System** built using **Node.js, Express, MySQL, and EJS**.
+This project performs complete **CRUD operations (Create, Read, Update, Delete)** with a clean UI and RESTful routes.
 
 ---
 
-## 🛠 Tech Stack
+## 📌 Features
 
-* Node.js
-* MySQL
-* mysql2 package
-* faker.js
+* ✅ Add New User
+* ✅ View All Users
+* ✅ Edit User Details
+* ✅ Delete User
+* ✅ Unique ID using UUID
+* ✅ Method Override (PATCH & DELETE support)
+* ✅ Dynamic UI using EJS
+* ✅ Clean and responsive UI with CSS
+
+---
+
+## 🛠️ Tech Stack
+
+* **Backend:** Node.js, Express.js
+* **Frontend:** EJS, HTML, CSS
+* **Database:** MySQL
+* **Other:** UUID, Method-Override
 
 ---
 
 ## 📂 Project Structure
 
 ```
-├── index.js        # Main script (database connection & insertion)
-├── schema.sql      # Database and table creation
-├── output          # Output of query result
+user-management-system-nodejs/
+│
+├── public/
+│   └── style.css
+│
+├── views/
+│   ├── home.ejs
+│   ├── show.ejs
+│   ├── new.ejs
+│   └── edit.ejs
+│
+├── index.js
 ├── package.json
+└── README.md
 ```
 
 ---
 
-## ⚙️ Setup Instructions
+## ⚙️ Installation & Setup
 
-### 1. Install Dependencies
+### 1️⃣ Clone Repository
 
-```bash
+```
+git clone https://github.com/yuvrajsinh2523/user-management-system-nodejs.git
+cd user-management-system-nodejs
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```
 npm install
 ```
 
-### 2. Create Database
+---
 
-Run the SQL file:
+### 3️⃣ Setup MySQL Database
 
-```bash
-mysql -u root -p < schema.sql
+Create database:
+
+```
+CREATE DATABASE userdb;
+```
+
+Create table:
+
+```
+CREATE TABLE user (
+    id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(50),
+    password VARCHAR(50)
+);
 ```
 
 ---
 
-## 🧠 How It Works
+### 4️⃣ Configure Database
 
-* Connects to MySQL database
-* Generates 100 random users using faker
-* Stores data in array format
-* Uses bulk insert query:
+Update your MySQL connection in `index.js`:
 
-```sql
-INSERT INTO users (id, name, email, password) VALUES ?
+```js
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "your_password",
+    database: "userdb"
+});
 ```
 
-* Executes query and prints result
-
 ---
 
-## 📊 Example Data Generated
+### 5️⃣ Run Project
 
-* UUID (User ID)
-* Username
-* Email
-* Password
-
----
-
-## ▶️ Run Project
-
-```bash
+```
 node index.js
 ```
 
----
-
-## 📌 Notes
-
-* Make sure MySQL server is running
-* Update password in `index.js` if needed
-* Avoid using reserved table names like `user`
+👉 Open in browser:
+http://localhost:8080
 
 ---
 
-## 🎯 Learning Outcome
+## 📸 Screenshots (Add Later)
 
-* MySQL connection using Node.js
-* Bulk insertion technique
-* Using faker.js for test data
-* Basic database schema design
+* Home Page
+* User List Page
+* Add User Form
+* Edit User Form
 
 ---
 
-## ⭐ Future Improvements
+## 🔄 CRUD Routes
 
-* Add Express API
-* Create REST endpoints (GET, POST)
-* Add validation
-* Use environment variables (.env)
+| Method | Route            | Description    |
+| ------ | ---------------- | -------------- |
+| GET    | `/`              | Home Page      |
+| GET    | `/user`          | Show all users |
+| GET    | `/user/new`      | Add user form  |
+| POST   | `/user`          | Create user    |
+| GET    | `/user/:id/edit` | Edit form      |
+| PATCH  | `/user/:id`      | Update user    |
+| DELETE | `/user/:id`      | Delete user    |
+
+---
+
+## ⚠️ Important Concepts Used
+
+* RESTful Routing
+* Method Override
+* UUID for unique IDs
+* EJS Templating
+* MySQL Queries
+
+---
+
+## 🚀 Future Improvements
+
+* 🔐 Password hashing (bcrypt)
+* 🔑 Authentication system (Login/Signup)
+* 📦 MVC folder structure
+* 🎨 Better UI with Bootstrap / Tailwind
 
 ---
 
 ## 👨‍💻 Author
 
-Yuvrajsinh Jadeja
+**Yuvrajsinh Jadeja**
+GitHub: https://github.com/yuvrajsinh2523
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+👉 Star ⭐ the repository
+👉 Share with others
