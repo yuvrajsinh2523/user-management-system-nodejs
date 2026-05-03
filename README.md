@@ -37,7 +37,7 @@ user-management-system-nodejs/
 │
 ├── views/
 │   ├── home.ejs
-│   ├── show.ejs
+│   ├── showuser.ejs
 │   ├── new.ejs
 │   └── edit.ejs
 │
