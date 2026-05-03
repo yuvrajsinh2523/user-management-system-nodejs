@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h2>The total user are: <%=count%></h2>
-    <button><a href="http://localhost:8080/user/new">Join now!</a></button>
-    <button><a href="http://localhost:8080/user">Click to see user list</a></button>
+  <h2>The total user are: <%=count%></h2>
+
+<div style="text-align:center;">
+    <a href="/user/new"><button>Join now!</button></a>
+    <a href="/user"><button>See Users</button></a>
+</div>
 </body>
 </html>
