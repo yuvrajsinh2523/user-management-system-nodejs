@@ -131,15 +131,6 @@ app.delete("/user/:id",(req,res)=>{
 
 
 
-// const getRandomUser=()=>{
-//     return[
-//         faker.string.uuid(),
-//         faker.internet.username(),
-//         faker.internet.email(),
-//         faker.internet.password()
-//     ]
-// }
-
 
 // let q=`insert into user(id,name,email,password)values ?`;
 // let data=[];
