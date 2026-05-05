@@ -133,25 +133,17 @@ const getRandomUser=()=>{
 
 
 
-
-
-
-
-
-
-
-
-// let q=`insert into user(id,name,email,password)values ?`;
+/ let q=`insert into user(id,name,email,password)values ?`;
 // let data=[];
 
-// for(let i=1;i<=100;i++){
-//     data.push(getRandomUser());
-// }
-// try{
-//     connection.query(q,[data],(err,result)=>{
-//         if(err)throw err;
-//         console.log(result);
-//     })
-// }catch(err){
-//     console.log(err);
-// }
+for(let i=1;i<=100;i++){
+    data.push(getRandomUser());
+}
+try{
+    connection.query(q,[data],(err,result)=>{
+        if(err)throw err;
+        console.log(result);
+    })
+}catch(err){
+    console.log(err);
+}
