@@ -121,6 +121,15 @@ app.delete("/user/:id",(req,res)=>{
 })
 
 
+const getRandomUser=()=>{
+    return[
+        faker.string.uuid(),
+        faker.internet.username(),
+        faker.internet.email(),
+        faker.internet.password()
+    ]
+}
+
 
 
 
